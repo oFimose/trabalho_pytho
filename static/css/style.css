@@ -1,4 +1,36 @@
 /* static/css/estilos.css */
+nav {
+    background-color: #111;
+    padding: 15px;
+}
+
+nav h2 {
+    color: white;
+    display: inline;
+    margin-right: 20px;
+}
+
+/* LINKS */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    color: #00ffc3;
+}
+
+/* LOGO */
+.logo {
+    width: 120px;
+    vertical-align: middle;
+}
+
 body {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -46,3 +78,75 @@ body {
 
 .btn-editar { color: #ffa500; text-decoration: none; margin-right: 15px; }
 .btn-deletar { color: #ff4d4d; text-decoration: none; }
+
+/* CONTAINER */
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #1c1c1c;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* TÍTULO */
+.form-container h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* GRUPO DE CAMPOS */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* LABEL */
+.form-group label {
+    color: #ccc;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* INPUTS */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+/* TEXTAREA MENOR */
+.form-group textarea {
+    height: 80px;
+}
+
+/* ERROS */
+.error {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* BOTÃO */
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00ffc3;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #00cfa0;
+}
+/* Deixar Descricao Menor*/
+.form-group textarea {
+    height: 80px;
+}
+

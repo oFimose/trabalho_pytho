@@ -1,72 +1,72 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Cadastrar Produto</h1>
+<div class="form-container">
+    <h1>Cadastrar Produto</h1>
 
-<form method="POST">
-    {% csrf_token %}
-    
-    <div>
-        <label for="{{ form.nome.id_for_label }}">Nome:</label>
-        {{ form.nome }}  
-        {% if form.nome.errors %}
-            <div style="color:red;">
-                {% for error in form.nome.errors %}
-                    <p>{{ error }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
-    </div>
-    
-    <div>
-        <label for="{{ form.preco.id_for_label }}">Preço:</label>
-        {{ form.preco }}
-        {% if form.preco.errors %}
-            <div style="color:red;">
-                {% for error in form.preco.errors %}
-                    <p>{{ error }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
-    </div>
-
-    <!-- Personalizando o campo de Descrição -->
-    <div>
-        <label for="{{ form.descricao.id_for_label }}">Descrição:</label>
-        {{ form.descricao }}  <!-- Aqui a descrição será renderizada com a altura menor -->
-        {% if form.descricao.errors %}
-            <div style="color:red;">
-                {% for error in form.descricao.errors %}
-                    <p>{{ error }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
-    </div>
-
-    <!-- Adicionando o campo Estoque -->
-    <div>
-        <label for="{{ form.estoque.id_for_label }}">Estoque:</label>
-        {{ form.estoque }}
-        {% if form.estoque.errors %}
-            <div style="color:red;">
-                {% for error in form.estoque.errors %}
-                    <p>{{ error }}</p>
-                {% endfor %}
-            </div>
-        {% endif %}
-    </div>
-
-    <div>
-    <label for="{{ form.categoria.id_for_label }}">Categoria:</label>
-    {{ form.categoria }}
-    {% if form.categoria.errors %}
-        <div style="color:red;">
-            {% for error in form.categoria.errors %}
-                <p>{{ error }}</p>
-            {% endfor %}
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="{{ form.nome.id_for_label }}">Nome:</label>
+            {{ form.nome }}  
+            {% if form.nome.errors %}
+                <div class="error">
+                    {% for error in form.nome.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
-    {% endif %}
+        
+        <div class="form-group">
+            <label for="{{ form.preco.id_for_label }}">Preço:</label>
+            {{ form.preco }}
+            {% if form.preco.errors %}
+                <div class="error">
+                    {% for error in form.preco.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.descricao.id_for_label }}">Descrição:</label>
+            {{ form.descricao }}
+            {% if form.descricao.errors %}
+                <div class="error">
+                    {% for error in form.descricao.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.estoque.id_for_label }}">Estoque:</label>
+            {{ form.estoque }}
+            {% if form.estoque.errors %}
+                <div class="error">
+                    {% for error in form.estoque.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.categoria.id_for_label }}">Categoria:</label>
+            {{ form.categoria }}
+            {% if form.categoria.errors %}
+                <div class="error">
+                    {% for error in form.categoria.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <button type="submit">Salvar</button>
+    </form>
 </div>
-    <button type="submit">Salvar</button>
-</form>
 {% endblock %}
