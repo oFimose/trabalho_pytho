@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabacaria</title>
+
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<nav>
+    <h2>Tabacaria Marlon Fimose</h2>
+    <a href="/">Home</a> |
+    <a href="/produto/cadastro/">Produtos</a> |
+    <a href="/categoria/cadastro/">Categorias</a>
+</nav>
+
+<hr>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<hr>
+
+<footer>© 2026 Tabacaria Marlon Fimose</footer>
+</body>
+</html> 

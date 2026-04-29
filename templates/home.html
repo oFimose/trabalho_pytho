@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-principal">
+    <div class="card-tabacaria">
+        <h1>Bem-vindo à Tabacaria Marlon Fimose</h1>
+        <p style="color: #bbb;">Gerencie produtos e categorias com agilidade</p>
+
+        <img src="{% static 'imagens/logo projeto.jfif' %}" class="logo-circular" alt="Logo">
+
+        <hr style="border: 0; border-top: 1px solid #444; margin: 30px 0;">
+
+        <h2 style="color: #00d1b2; text-align: left;">Produtos Disponíveis:</h2>
+        
+        <ul class="lista-produtos">
+          {% for produto in produtos %}
+            <li class="item-produto">
+              <div>
+                <strong>{{ produto.nome }}</strong> <br>
+                <span style="color: #00d1b2;">R$ {{ produto.preco }}</span>
+              </div>
+              
+              <div>
+                <a href="{% url 'editar_produto' produto.id %}" class="btn-editar">Editar</a> 
+                <a href="{% url 'deletar_produto' produto.id %}" class="btn-deletar" onclick="return confirm('Excluir?')">Deletar</a>
+              </div>
+            </li>
+          {% empty %}
+            <p>Nenhum produto cadastrado.</p>
+          {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
